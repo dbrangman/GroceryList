@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Grocery List</title>
+</head>
+<body>
+	<h1>Brangman Grocery List</h1>
+	<form>
+		<label for = "pname">Name: </label><br>
+		<input id = "pname" type = "text"><br>
+		<label for = "iname">Item: </label><br>
+		<input id = "iname" type ="text"><br><br>
+		<input type = "submit" value = "Add Item" onclick = "myfunction(); return false;"><br>	
+	</form>
+	<script>
+		function myfunction(){
+			//var name = getElementById("pname").innerHTML();
+			var item = document.getElementById("iname").textContent;
+			var newli = document.createElement("LI");
+			var textnode = document.createTextNode(item);
+			newli.appendChild(textnode);
+			document.getElementById("glist").appendChild(newli);
+			/*var node = document.createElement("LI");
+  			var textnode = document.createTextNode("Water");
+  			node.appendChild(textnode);
+  			document.getElementById("glist").appendChild(node);*/
+
+		}
+	</script>
+
+	<ul id = "glist">
+		
+	</ul>
+
+</body>
+</html>
